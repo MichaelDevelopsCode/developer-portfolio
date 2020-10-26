@@ -127,8 +127,6 @@ footer {
     width: 250px;
     margin: 10px 0 0 22px;
     list-style: none;
-    border: 3px solid var(--accent);
-
 }
 
 .applications ul li:first-child {
@@ -138,6 +136,7 @@ footer {
 .applications a {
     display: flex;
     position: relative;
+    border: 3px solid var(--accent);
 }
 
 .applications a img {
