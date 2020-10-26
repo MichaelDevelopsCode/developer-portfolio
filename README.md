@@ -4,8 +4,7 @@
 This is a portfolio website to showcase my work for future employers
 
 ## Installation
-Visit the live website through github [placeholder]
+Visit the live website through github [https://michaeldevelopscode.github.io/developer-portfolio/]
 
 ## Screenshots
-[placeholder]
-
+![Webpage Screenshot](./assets/images/screenshot.png)
