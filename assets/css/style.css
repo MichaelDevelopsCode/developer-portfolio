@@ -15,7 +15,7 @@
     --secondaryLight: rgb(197, 197, 197);
     --secondaryDark: #4e5257;
     --accentDark: #303940;
-    --accentLight: rgb(197, 197, 197);
+    --accentLight:#C7D0E1;
 
     --bg: var(--bgDark);
     --primary: var(--primaryDark);
@@ -184,7 +184,7 @@ footer {
     height: 32px;
     border-radius: 100px;
     margin-bottom: 10px;
-    transition: width .5s ease, height .2s ease, font-size .2s ease
+    transition: width .5s ease, height .2s ease, font-size .2s ease;
 }
 
 .info .bio:hover {
@@ -194,16 +194,18 @@ footer {
 }
 
 .info.active .bio {
-    width: 90%;
-    height: 125px;
+    width: 76%;
+    height: 115px;
     border-radius: 5px;
     font-size: 20px;
 	background: var(--accent);
-    transition: width .5s ease, height .5s ease
+    transition: width .5s ease, height .5s ease;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
 }
 
-.bio i.infoBtn {
-	color: rgba(255, 255, 255, .6);
+.info .bio i.infoBtn {
 	display: block;
 }
 
@@ -214,7 +216,7 @@ footer {
 }
 
 .info.active .fa-info {
-	display: none;
+	display: none !important;
 }
 
 .info .fa-angle-down {
@@ -238,10 +240,25 @@ footer {
 .info p {
     text-align: center;
     padding: 24px;
-	display: none;
+    display: none;
+    word-spacing: 1px;
 }
 
-.info.active p {
+.info .social-icons {
+    display: flex;
+}
+
+.info .social-icons a {
+    color: var(--primary);
+    padding: 10px;
+    font-size: 20px;
+}
+
+.info a {
+    display: none;
+}
+
+.info.active p, .info.active a {
 	display: block;
 }
 
