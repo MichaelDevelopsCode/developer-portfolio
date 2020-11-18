@@ -9,7 +9,7 @@
 /* Change depending on theme:: remove Dark/Light from here and toggle through js*/
 :root {
     --bgLight: white;
-    --bgDark: #111213;
+    --bgDark: radial-gradient(circle 1600px at 100% 0,#2c2f38 0,#000000 100%);;
     --primaryLight: #111213;
     --primaryDark: #ffffff;
     --secondaryLight: rgb(197, 197, 197);
@@ -24,18 +24,38 @@
     --boxShadow: black; /* Specifically for work section cards */
 }
 
+html {
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+}
 body {
     color: var(--primary);
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg);
 }
 
+section {
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.background {
+    position: fixed;
+    z-index: -100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+}
 /* NAV STYLE STARTS */
 header {
     display: flex;
     margin: 0;
     align-items: center;
     justify-content: space-between;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 header h1 {
@@ -79,20 +99,23 @@ footer {
 
 /* HERO STYLE STARTS */
 .cover {
-    background-color:  var(--bg);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 200px;
+    padding: 170px 0 0 0;
     position: relative;
 }
 
 .cover .theme {
     position: absolute;
     top: 0;
-    left: 0;
-    padding: 10px 10px 10px 40px;
+    left: 50px;
+}
+
+.cover .theme:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 .cover .theme svg g{
@@ -268,15 +291,17 @@ footer {
 .sections {
     display: flex;
     margin: 50px auto;
-    width: 100%;
+    width: 80%;
+    align-items: center;
 }
 
 .sections .headerTwo {
+    font-family: CriteriaCF-ExtraBold;
     text-transform: uppercase;
     text-align: center;
     border-right: 1px solid;
     height: 120px;
-    width: 200px;
+    width: 580px;
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -285,13 +310,11 @@ footer {
 }
 
 .sections .headerTwo .section-title {
-    padding: 0 10px 0 10px;
-    width: 200px;
+    font-size: 5em;
 }
 
 .sections .headerTwo .underline {
-    border-bottom: 1px solid #FFF;
-    background-color: #DADADA;
+    border-bottom: 1px solid var(--primary);
     height: 1px;
     width: 100%;
     margin: 0em 0px 1.5em;
@@ -299,23 +322,33 @@ footer {
 
 /* APPLICATIONS */
 .applications {
+    position: relative;
     width: 100%;
+    height: 650px;
     overflow: scroll;
     justify-content: center;
+    align-items: center;
 }
 
 .applications ul {
+    position: absolute;
     width: 475px;
     justify-content: flex-start;
 }
 
 .applications ul .card {
     position: relative;
+    border-radius: 5px;
     cursor: pointer;
     list-style: none;
-    margin: 35px;
+    margin: 10px;
     transition: 1s;
     transform: scale(.5);
+    width: 100vh;
+}
+
+.applications ul .card:last-child {
+    padding-right: 125px;
 }
 
 .applications ul .card.isVisible {
@@ -324,30 +357,30 @@ footer {
     transform: none;
 }
 
-.applications ul .card:hover {
-    box-shadow: 0 5px 5px var(--boxShadow);
+.applications ul .card.hover {
+    box-shadow: 0 24px 48px -16px #000;
     transition: 2s;
 }
 
 .applications ul .card .work-content {
-    width: 400px;
-    height: 300px;
+    width: 350px;
+    height: 250px;
     transition: 0.5s;
 }
 
 .applications ul .card .work-content.work1{
     position: relative;
-    background-color: rgb(51 51 51);
+    background-color: #15171b;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
     transform: translateY(100px);
     border-radius: 5px;
-    box-shadow: 0 5px 5px var(--boxShadow);
+    box-shadow: 0 12px 24px -8px rgba(0,0,0,.8);
 }
 
-.applications ul .card:hover .work-content.work1{
+.applications ul .card .work-content.hover.work1{
     transform: translateY(0);
     box-shadow: none;
 }
@@ -365,7 +398,7 @@ footer {
     filter: blur(1px);
 }
 
-.applications ul .card:hover .work-content.work1 .content img {
+.applications ul .card .work-content.hover.work1 .content img {
     opacity: 1;
     border-radius: 5px 5px 0 0;
     filter: none;
@@ -382,7 +415,7 @@ footer {
     transition: opacity .5s ease;
 }
 
-.applications ul .card:hover .work-content.work1 .content h2, .applications ul .card:hover .work-content.work1 .content h4 {
+.applications ul .card .work-content.hover.work1 .content h2, .applications ul .card .work-content.hover.work1 .content h4 {
     opacity: 0;
 }
 
@@ -392,22 +425,22 @@ footer {
     background-color: #eaeaea;
     color: #111213;
     padding: 20px;
-    transform: translateY(-200px);
+    transform: translateY(-150px);
     overflow: scroll;
     border-radius: 5px;
 }
 
-.applications ul .card:hover .work-content.work2{
+.applications ul .card .work-content.hover.work2{
     transform: translateY(0);
     border-radius: 0 0 5px 5px;
 }
 
-.applications ul .card:hover .work-content.work2 .content p{
+.applications ul .card .work-content.hover.work2 .content p{
     margin: 0;
     padding: 0;
 }
 
-.applications ul .card:hover .work-content.work2 .content a{
+.applications ul .card:hover .work-content.hover.work2 .content a{
     margin: 15px 0 0;
     display:  inline-block;
     text-decoration: none;
@@ -418,7 +451,7 @@ footer {
     transition: all .2s ease;
 }
 
-.applications ul .card:hover .work-content.work2 .content a:hover{
+.applications ul .card:hover .work-content.hover.work2 .content a:hover{
     background: #111213;
     color: #eaeaea;;
 }

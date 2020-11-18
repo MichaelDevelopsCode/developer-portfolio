@@ -1,4 +1,4 @@
-
+// ------------------------------------------ ABOUT (INFO BTN) TOGGLE ------------------------------------
 // About btn clicked: toggle tab 
 $(".infoBtn").on("click", function() {
     $(".info").toggleClass("active");
@@ -29,18 +29,18 @@ $(".theme svg").on("click", function() {
     }
 });
 
+// ------------------------------------------ SCROLLING ------------------------------------
 // Viewport Function
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
       rect.top >= 0 &&
-      rect.left >= 0 &&
+      rect.left >= 300 &&
       rect.bottom <=
         (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
-
 
 // Check if sections are in view to add style classes
 var sections = $(".sections");
@@ -67,3 +67,22 @@ $(document).on("scroll", sectionVisibility);
 
 // Scroll effect for work section applications
 $("#apps").on("scroll", cardVisibility);
+
+// ------------------------------------------ WORK SECTION APPS HOVER FUNCTION ------------------------------------
+// on hover function
+var appHoverOn = function() {
+        $(this)
+            .closest(".card")
+            .addClass("hover") // add hover to card (box shadow style)
+            .children(".work-content")
+            .addClass("hover"); 
+};
+
+var appHoverOff = function() {
+        $(this)
+            .closest(".card")
+            .removeClass("hover")
+            .children(".work-content")
+            .removeClass("hover");
+}
+$(".work-content").hover(appHoverOn,appHoverOff);
