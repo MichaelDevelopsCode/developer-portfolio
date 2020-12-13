@@ -468,7 +468,10 @@ footer {
 
 .contact-info ul {
     display: flex;
+    flex-direction: column;
     list-style: none;
+    align-items: flex-start;
+    text-decoration: none;
 }
 
 .contact-info ul li {
@@ -478,7 +481,6 @@ footer {
 .contact-info ul li a {
     color: #024e76;
     padding: 5px 5px;
-    border-bottom: 3px solid;
     border-color: #024e76;
     text-decoration: none;
 }
