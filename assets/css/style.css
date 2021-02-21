@@ -294,15 +294,19 @@ footer {
 .sections {
     margin: 50px auto;
     width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .sections .headerTwo {
-    font-family: CriteriaCF-ExtraBold;
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 65px;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: .15em;
 }
 
 .sections .headerTwo .section-title {
@@ -444,6 +448,13 @@ footer {
 /* APPLICATION ENDS */
 
 /* CONTACT STARTS */
+#contact {
+    padding-bottom: 250px;
+}
+.contact-header {
+    padding-bottom: 100px;
+}
+
 .contact-info {
     align-items: center;
     margin: 0 0 0 22px;
@@ -454,12 +465,13 @@ footer {
     display: flex;
     flex-direction: column;
     list-style: none;
-    align-items: flex-start;
+    align-items: center;
     text-decoration: none;
 }
 
 .contact-info ul li {
-    padding: 0 5px;
+    padding: 5px 5px;
+    font-size: 20px;
 }
 
 .contact-info ul li a {
@@ -467,11 +479,24 @@ footer {
     padding: 5px 5px;
     border-color: #024e76;
     text-decoration: none;
+    transition: transform .2s ease, background-size .2s ease-in-out;
+    background-position: bottom left;
+    background-size: 0% 3px;
+    background-image: linear-gradient(var(--primary), var(--primary));
+    background-repeat: no-repeat;
+    padding-bottom: 3px;
+}
+
+.contact-info ul li a:hover, header nav ul li a:active {
+    text-decoration: none;
+    transform: scale(1.1);
+    background-size: 100% 1px;
 }
 /* CONTACT ENDS */
 
 .flex-row {
     display: flex;
+    justify-content: center;
 }
 
 
