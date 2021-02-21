@@ -1,16 +1,18 @@
 // ------------------------------------------ ABOUT (INFO BTN) TOGGLE ------------------------------------
 // About btn clicked: toggle tab 
 $(".infoBtn").on("click", function() {
+    document.getElementById('about').scrollIntoView({behavior: 'smooth'});
     $(".info").toggleClass("active");
 });
 
 // About link clicked in nav: toggle tab
 $("#aboutBtn").on("click", function() {
+    document.getElementById('about').scrollIntoView({behavior: 'smooth'});
     $(".info").toggleClass("active");
 });
 
 // Toggle theme on click of btn
-var themeStatus = "dark" // start page on dark mode
+var themeStatus = "light" // start page on light mode
 $(".theme svg").on("click", function() {
     if (themeStatus === "dark") {
         $(":root").css("--bg", "var(--bgLight)");
