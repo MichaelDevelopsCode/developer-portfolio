@@ -503,7 +503,7 @@ footer {
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
     .contact-info ul li {
-        font-size: 13px;
+        font-size: 22px;
         padding: 0 5px;
     }
 
@@ -514,12 +514,6 @@ footer {
   
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 768px) {
-
-    header {
-        flex-direction: column;
-        align-items: normal;
-    }
-
     header h1 {
         font-size: 30px;
         margin: 0;
@@ -531,14 +525,16 @@ footer {
         padding: 0;
     }
 
-    header nav ul li {
-        padding: 4px;
-        border-bottom: 0;
-        border-left: 3px solid var(--accent);
-    }
-
     header nav ul li a {
         border-bottom: 0;
+    }
+
+    .cover {
+        padding: 100px 0 0 0;
+    }
+
+    .cover .theme {
+        top: 60px;
     }
 
     .cover h2 {
@@ -557,20 +553,23 @@ footer {
 
     .contact-info ul li {
         padding: 10px;
-    }
-
-    .applications, .sections ul {
-        display: contents;
-    }
-
-
- 
+    } 
 }
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
 
+    header h1 {
+        display: none;
+    }
+
+    header nav ul {
+        font-size: 17px;
+        padding: 25px 5px 5px 0;
+    }
+
     .cover {
+        padding: 200px 0 0 0;
         align-items: center;
         flex-direction: column;
         justify-content: flex-start;
@@ -586,9 +585,30 @@ footer {
         margin: 10px;
     }
 
+    .intro {
+        width: 300px;
+    }
+
+    .info .fa-info {
+        padding: 0;
+    }
+
+    .info.active .bio {
+        width: 350px;
+    }
+
+    .info p {
+        padding: 10px;
+        width: 350px;
+    }
+
+    .intro :last-child {
+        font-size: 15px;
+    }
+
     .sections {
         flex-direction: column;
-
+        width: 100%;
     }
 
     .section-title {
@@ -596,6 +616,10 @@ footer {
         border-bottom: 3px solid;
         text-align: center;
         padding: 0;
+    }
+
+    .sections .headerTwo .underline {
+        display: none;
     }
 
     .headerTwo {
@@ -613,13 +637,12 @@ footer {
     .applications, .bio, .contact-info {
         padding-top: 10px;
     }
-    .applications ul li:first-child {
-        width: 250px;
+
+    .applications ul:first-child {
+        padding-left: 65px;
     }
 
-    .applications ul li {
-        width: 170px;
+    .applications ul li:last-child {
+        padding-right: 25px;
     }
-    
-
 }
