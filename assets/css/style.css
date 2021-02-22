@@ -568,8 +568,12 @@ footer {
         padding: 25px 5px 5px 0;
     }
 
+    .headerTwo {
+        padding-left: 120px;
+    }
+
     .cover {
-        padding: 200px 0 0 0;
+        padding: 200px 0 0 120px;
         align-items: center;
         flex-direction: column;
         justify-content: flex-start;
@@ -612,10 +616,7 @@ footer {
     }
 
     .section-title {
-        border-right: 0;
-        border-bottom: 3px solid;
         text-align: center;
-        padding: 0;
     }
 
     .sections .headerTwo .underline {
@@ -634,15 +635,29 @@ footer {
         font-size: 30px;
     }
 
+    .applications {
+        width: 560px;
+    }
+    .applications ul {
+        width: 560px;
+    }
     .applications, .bio, .contact-info {
         padding-top: 10px;
     }
 
-    .applications ul:first-child {
-        padding-left: 65px;
+    .applications ul li:first-child {
+        padding-left: 100px;
     }
 
     .applications ul li:last-child {
         padding-right: 25px;
+    }
+
+    .contact-info ul {
+        padding-left: 100px;
+    }
+
+    .fa-envelope-open-text {
+        display: none;
     }
 }
