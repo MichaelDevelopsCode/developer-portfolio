@@ -646,7 +646,7 @@ footer {
     }
 
     .applications ul li:first-child {
-        padding-left: 100px;
+        margin-left: 100px;
     }
 
     .applications ul li:last-child {
