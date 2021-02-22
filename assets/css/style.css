@@ -24,11 +24,16 @@
     --boxShadow: black; /* Specifically for work section cards */
 }
 
+
+
 html {
     overflow: scroll;
     scroll-snap-type: y mandatory;
 }
-body {
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
     color: var(--primary);
     font-family: 'Montserrat', sans-serif;
 }
@@ -357,6 +362,7 @@ footer {
 }
 
 .applications ul .card .work-content.work1{
+    overflow-wrap: anywhere;
     position: relative;
     background-color: #4a4a4a;;
     display: flex;
@@ -568,12 +574,7 @@ footer {
         padding: 25px 5px 5px 0;
     }
 
-    .headerTwo {
-        padding-left: 120px;
-    }
-
     .cover {
-        padding: 200px 0 0 120px;
         align-items: center;
         flex-direction: column;
         justify-content: flex-start;
@@ -638,26 +639,52 @@ footer {
     .applications {
         width: 560px;
     }
-    .applications ul {
-        width: 560px;
-    }
+
     .applications, .bio, .contact-info {
         padding-top: 10px;
     }
 
-    .applications ul li:first-child {
-        margin-left: 100px;
-    }
-
     .applications ul li:last-child {
-        padding-right: 25px;
-    }
-
-    .contact-info ul {
-        padding-left: 100px;
+        padding-right: 70px;
     }
 
     .fa-envelope-open-text {
         display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    header nav ul {
+        font-size: 15px;
+        width: 318px;
+    }
+
+    .info.active .bio {
+        width: 250px;
+    }
+
+    .info p {
+        width: 250px;
+    }
+
+    .applications ul .card .work-content {
+        width: 250px;
+    }
+
+    .applications ul .card .work-content .content div {
+        width: 220px;
+    }
+
+    .applications ul li:last-child {
+        padding-right: 170px;
+    }
+
+    .sections .headerTwo .section-title {
+        font-size: 2em;
+    }
+
+    .contact-info ul li {
+        font-size: 16px;
     }
 }
